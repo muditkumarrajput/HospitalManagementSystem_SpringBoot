@@ -1,0 +1,6 @@
+com/Practice/hospitalManagement/dto/BloodGroupCountResponseEntity.class
+com/Practice/hospitalManagement/HospitalManagementApplication.class
+com/Practice/hospitalManagement/repository/PatientRepository.class
+com/Practice/hospitalManagement/entity/Patient.class
+com/Practice/hospitalManagement/entity/type/BloodGroupType.class
+com/Practice/hospitalManagement/service/PatientService.class

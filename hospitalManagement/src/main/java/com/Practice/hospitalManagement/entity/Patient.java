@@ -55,6 +55,9 @@ public class Patient {
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
 
+    @OneToOne()
+    @JoinColumn(name = "patientInsuranceId")
+    private Insurance insurance;
 //    private String bloodGroup;
 
 //    @Override
