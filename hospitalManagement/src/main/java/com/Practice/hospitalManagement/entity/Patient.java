@@ -10,6 +10,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @ToString
@@ -56,7 +57,7 @@ public class Patient {
     private BloodGroupType bloodGroup;
 
     @OneToOne()
-    @JoinColumn(name = "patientInsuranceId")
+    @JoinColumn(name = "patient_Insurance_Id")
     private Insurance insurance;
 //    private String bloodGroup;
 
@@ -71,6 +72,7 @@ public class Patient {
 //                '}';
 //    }
 
-
+    @OneToMany(mappedBy = "patient")
+    private List<Appointment> appointmentList;
 
 }

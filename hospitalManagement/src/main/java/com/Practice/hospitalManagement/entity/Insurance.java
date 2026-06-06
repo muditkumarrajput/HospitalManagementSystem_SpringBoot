@@ -35,4 +35,7 @@ public class Insurance {
     private LocalDateTime createdAt;
 
 
+    @OneToOne(mappedBy = "insurance")
+    private Patient patient;
+
 }
