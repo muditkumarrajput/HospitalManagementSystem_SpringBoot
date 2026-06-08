@@ -4,8 +4,6 @@ package com.Practice.hospitalManagement.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.print.Doc;
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,11 +25,11 @@ public class Department {
     private String name;
 
     @OneToOne
-    private Docter headDocter;
+    private Doctor headDoctor;
 
     @ManyToMany
-    @JoinTable(name = "My_dpt_docters", joinColumns = @JoinColumn(name = "dpt_id"),inverseJoinColumns = @JoinColumn(name = "docter_id"))
-    private Set<Docter> docters = new HashSet<>();
+    @JoinTable(name = "My_dpt_doctors", joinColumns = @JoinColumn(name = "dpt_id"),inverseJoinColumns = @JoinColumn(name = "doctor_id"))
+    private Set<Doctor> doctors = new HashSet<>();
 
 
 }

@@ -1,7 +1,6 @@
 package com.Practice.hospitalManagement.entity;
 
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -35,7 +34,7 @@ public class Appointment {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Docter docter;
+    private Doctor doctor;
 
 
 }

@@ -18,6 +18,7 @@ public class InsuranceService {
     private final InsuranceRepository insuranceRepository;
     private final PatientRepository patientRepository;
 
+
     @Transactional
     public Patient assignInsurancePatient(Insurance insurance, Long patientId){
         Patient patient = patientRepository.findById(patientId).orElseThrow(()->new EntityNotFoundException("Patient not found with id: " + patientId));
