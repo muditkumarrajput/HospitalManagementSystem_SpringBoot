@@ -135,12 +135,10 @@ public class Patient {
     @Enumerated(EnumType.STRING)
     private BloodGroupType bloodGroup;
 
-    @OneToOne(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
+    @OneToOne(cascade = {CascadeType.ALL},orphanRemoval = true)
     @JoinColumn(name = "patient_Insurance_Id")
     private Insurance insurance;
 
-    @OneToMany(mappedBy = "patient", cascade = {CascadeType.REMOVE}, orphanRemoval = true)
-    @ToString.Exclude
-    @Builder.Default // 5. Added to preserve your default ArrayList assignment when using a builder
+    @OneToMany(mappedBy = "patient", cascade = {CascadeType.REMOVE}, orphanRemoval = true,fetch = FetchType.EAGER)
     private List<Appointment> appointments = new ArrayList<>();
 }

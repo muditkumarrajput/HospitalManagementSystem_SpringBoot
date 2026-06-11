@@ -25,10 +25,14 @@ public class PatientTests {
     @Autowired
     private PatientRepository patientRepository;
 
-//    @Test
+    @Autowired
+    private PatientService patientService;
+
+    @Test
     public void testPatientRepository(){
-       Patient p1=new Patient();
-       patientRepository.save(p1);
+//       Patient p1=new Patient();
+//       patientRepository.save(p1);
+        List<Patient> patientList = patientRepository.findAllPatientsWithAppointments();        System.out.println(patientList);
     }
 
     @Test

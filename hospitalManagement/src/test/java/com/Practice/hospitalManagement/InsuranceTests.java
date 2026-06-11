@@ -39,15 +39,10 @@ public class InsuranceTests {
         Patient patient = insuranceService.assignInsurancePatient(insurance, 1L);
         System.out.println("Assigned Patient: " + patient);
 
-        // Then
-        assertNotNull(patient);
-
-//        // When disassociating (Note: corrected spelling from 'disaccociate')
-//        Patient newPatient = insuranceService.disassociateInsuranceFromPatient(patient.getId());
-//        System.out.println("Disassociated Patient: " + newPatient);
-
 //        // Then
-//        assertNotNull(newPatient );
+//        assertNotNull(patient);
+        var newPatient = insuranceService.disassociateInsuranceFromPatient(patient.getId());
+        System.out.println(newPatient);
     }
 
     @Test

@@ -58,6 +58,9 @@ public interface PatientRepository extends JpaRepository<Patient, Long> {
     @Query("UPDATE Patient p SET p.name = :name where p.id = :id")
     int updateNameWithId(@Param("name") String name, @Param("id") Long id);
 
+    // Fix: Specify 'Patient p' and use 'p.appointments'
+//    @Query("SELECT p FROM Patient p LEFT JOIN FETCH p.appointments a LEFT JOIN FETCH a.doctor")
 
-
+    @Query("SELECT p FROM Patient p LEFT JOIN FETCH p.appointments")
+    List<Patient> findAllPatientsWithAppointments();
 }
